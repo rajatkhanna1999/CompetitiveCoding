@@ -23,8 +23,8 @@ using namespace __gnu_pbds;
 
 #define mod 1000000007
 #define PI 3.14159265358979323
-#define ss second
-#define ff first
+#define y second
+#define x first
 #define pb push_back
 #define mp make_pair
 #define sz(a) a.size()
