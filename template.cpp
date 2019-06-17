@@ -21,6 +21,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+#define sp << " " <<
 #define mod 1000000007
 #define PI 3.14159265358979323
 #define y second
