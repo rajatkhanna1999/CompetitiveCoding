@@ -69,25 +69,26 @@ int main(int argc, char const *argv[])
 		ll graph[n+2][n+2],dp[n+2][n+2];
 		for(ll i=1; i<=n; i++)
 		{
-            for(ll j=1; j<=n; j++)
-            {
-                if(i==j)
-                {
-                	graph[i][j]=0;
-                	dp[i][j]=0;
-                }
-                else 
-                {
-                	graph[i][j]=maxValue;
-                	dp[i][j]=maxValue;
-               	}
-            }
-        }
+		    for(ll j=1; j<=n; j++)
+		    {
+			if(i==j)
+			{
+				graph[i][j]=0;
+				dp[i][j]=0;
+			}
+			else 
+			{
+				graph[i][j]=maxValue;
+				dp[i][j]=maxValue;
+			}
+		    }
+        	}
 
         //Making a vector
         vector<pair< pair<ll,ll>, ll >> kya;
-
-        for(ll i=0;i<m;i++){
+	//Inputting
+        for(ll i=0;i<m;i++)
+	{
             ll a,b,c;
             cin>>a>>b>>c;
             graph[a][b]=c;
@@ -112,27 +113,27 @@ int main(int argc, char const *argv[])
 		// 	// dp[b][a]=c;
 		// }
 
-        //Floyad-warshall
+        	//Floyad-warshall
 		for(ll k=1;k<=n;k++)
 		{
-            for(ll i=1;i<=n;i++)
-            {
-                for(ll j=1;j<=n;j++)
-                {
-                    dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);
-                }
-            }
-        }
+		    for(ll i=1;i<=n;i++)
+		    {
+			for(ll j=1;j<=n;j++)
+			{
+			    dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);
+			}
+		    }
+        	}
 
 		bool flag=true;
-        for(ll i=1;i<=n;i++)
-        {
-            for(ll j=1;j<=n;j++)
-            {
-                if(graph[i][j]!=maxValue && dp[i][j]!=graph[i][j])
-                	flag=false;
-            }
-        }
+		for(ll i=1;i<=n;i++)
+		{
+		    for(ll j=1;j<=n;j++)
+		    {
+			if(graph[i][j]!=maxValue && dp[i][j]!=graph[i][j])
+				flag=false;
+		    }
+		}
 
 		if(!flag)
 		{
@@ -140,9 +141,9 @@ int main(int argc, char const *argv[])
 		}
 		else
 		{
-            cout<<m<<endl;
-            for(ll i=0;i<m;i++)
-                cout<<kya[i].x.x sp kya[i].x.y sp kya[i].y<<endl;
+		    cout<<m<<endl;
+		    for(ll i=0;i<m;i++)
+			cout<<kya[i].x.x sp kya[i].x.y sp kya[i].y<<endl;
 		}
 		T++;
 	}
