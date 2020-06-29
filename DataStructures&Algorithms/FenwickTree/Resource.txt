@@ -1,0 +1,9 @@
+https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/tutorial/
+
+https://cp-algorithms.com/data_structures/fenwick.html
+
+https://www.topcoder.com/community/competitive-programming/tutorials/binary-indexed-trees/
+
+https://www.iarcs.org.in/inoi/online-study-material/topics/binary-index-tree.php
+
+https://visualgo.net/en/fenwicktree?slide=1
