@@ -1,9 +1,7 @@
-class dat
-{
+class dat{
 public:
     int mx;
-    dat()
-    {
+    dat(){
         this->mx = INT_MAX;
     }
 };
