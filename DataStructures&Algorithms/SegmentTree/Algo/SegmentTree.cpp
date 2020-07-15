@@ -1,19 +1,19 @@
-class data
+class dat
 {
 public:
     int mx;
-    data()
+    dat()
     {
-        this->mx = INT_MIN;
+        this->mx = INT_MAX;
     }
 };
 
 const int N=100005;
 int a[N];
-data seg[N<<2];
+dat seg[N<<2];
 
 //update as required
-void merge(data &cur, data &l, data &r) 
+void merge(dat &cur, dat &l, dat &r) 
 {
     cur.mx = min(l.mx, r.mx); 
 }
@@ -37,8 +37,8 @@ void update(int node, int start, int end, int idx, int val)
     if(start == end)
     {
         //update as required
-        a[idx] += val;
-        seg[node].m += val;
+        a[idx] = val;
+        seg[node].mx = val;
         return;
     }
     int mid = (start + end)>>1;
@@ -50,12 +50,12 @@ void update(int node, int start, int end, int idx, int val)
 
 }
 
-data query(int node, int start, int end, int l, int r)
+dat query(int node, int start, int end, int l, int r)
 {
     if(r<start || end<l)
     {
         // range represented by a node is completely outside the given range
-        data d;
+        dat d;
         return d;
     }
     if(l<=start && end<=r)
@@ -65,9 +65,9 @@ data query(int node, int start, int end, int l, int r)
     }
     // range represented by a node is partially inside and partially outside the given range
     int mid = (start + end)>>1;
-    data p1 = query(node<<1, start, mid, l, r);
-    data p2 = query(node<<1|1, mid+1, end, l, r);
-    data p;
+    dat p1 = query(node<<1, start, mid, l, r);
+    dat p2 = query(node<<1|1, mid+1, end, l, r);
+    dat p;
     merge(p,p1,p2);
     return p;
 }
