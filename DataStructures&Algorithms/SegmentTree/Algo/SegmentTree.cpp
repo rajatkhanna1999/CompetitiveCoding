@@ -38,7 +38,7 @@ void update(int node, int start, int end, int idx, int val)
     {
         //update as required
         a[idx] += val;
-        seg[node].m += val;
+        seg[node].mx += val;
         return;
     }
     int mid = (start + end)>>1;
